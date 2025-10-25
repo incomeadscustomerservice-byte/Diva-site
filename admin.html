@@ -3,57 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diva Ads - Admin Panel</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Diva Ads Admin Panel</title>
+  <link rel="stylesheet" href="admin.css">
 </head>
 <body>
-  <header>
-    <h1>👑 Diva Ads Admin Panel</h1>
-    <nav>
-      <a href="dashboard.html">Dashboard</a> |
-      <a href="index.html">Home</a> |
-      <a href="#" id="logoutBtn">Logout</a>
-    </nav>
-  </header>
+  <div class="admin-container">
+    <header>
+      <h1>💛 Diva Ads Admin Dashboard</h1>
+      <div class="admin-info">
+        <span id="adminEmail">Loading...</span>
+        <button id="logoutBtn">Logout</button>
+      </div>
+    </header>
 
-  <main class="container">
-    <section class="card">
-      <h2>Users</h2>
+    <section class="stats">
+      <div class="card">
+        <h3>Total Users</h3>
+        <p id="totalUsers">0</p>
+      </div>
+      <div class="card">
+        <h3>Total Earnings</h3>
+        <p id="totalEarnings">$0.00</p>
+      </div>
+      <div class="card">
+        <h3>Pending Withdrawals</h3>
+        <p id="pending">0</p>
+      </div>
+    </section>
+
+    <section class="users-table">
+      <h2>👥 User List</h2>
       <table>
         <thead>
           <tr>
-            <th>Name</th>
             <th>Email</th>
-            <th>Balance (₦)</th>
+            <th>Balance</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody id="userTable">
-          <tr><td>John Doe</td><td>john@example.com</td><td>250</td></tr>
-          <tr><td>Mary Ada</td><td>mary@example.com</td><td>400</td></tr>
+          <tr><td colspan="3" align="center">Loading users...</td></tr>
         </tbody>
       </table>
     </section>
+  </div>
 
-    <section class="card">
-      <h2>Manage Ads</h2>
-      <button>Add New Ad</button>
-      <ul id="adsList">
-        <li>Ad #1 — ₦10 per click</li>
-        <li>Ad #2 — ₦15 per click</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2>Payments</h2>
-      <p>Pending withdrawals: 2</p>
-      <button>Process Payments</button>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Diva Ads — Admin Panel</p>
-  </footer>
-
-  <script src="app.js"></script>
+  <script type="module" src="admin.js"></script>
 </body>
 </html>
