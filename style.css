@@ -1,99 +1,67 @@
-/* DIVA ADS — White and Yellow Theme 💛🤍 */
-
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  background-color: #ffffff;
-  color: #333;
+  /* Dashboard layout upgrades */
+.topbar {
   display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-header {
-  background-color: #FFD700;
-  color: #000;
-  padding: 15px;
-  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  background: #FFD700;
+  padding: 15px 25px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-header h1 {
-  margin: 0;
+.topbar .logo {
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
-nav a {
-  color: #000;
-  text-decoration: none;
-  margin: 0 10px;
-  font-weight: 600;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-.container {
-  flex: 1;
-  max-width: 600px;
+.dashboard {
+  max-width: 1000px;
   margin: 30px auto;
-  background: #fff;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-}
-
-h2 {
-  text-align: center;
-  color: #444;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-input {
   padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
 }
 
-button {
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #FFD700;
-  color: #000;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s ease;
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
 }
 
-button:hover {
-  background-color: #e6c200;
-}
-
-.card {
+.stat-card {
   background: #fffbea;
-  padding: 15px;
-  margin: 15px 0;
-  border-radius: 8px;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-footer {
-  text-align: center;
-  padding: 15px;
-  background-color: #FFD700;
+.stat-card h3 {
+  margin: 0;
+  color: #555;
+}
+
+.stat-amount {
+  font-size: 1.5rem;
+  font-weight: bold;
   color: #000;
-  font-weight: 600;
+  margin-top: 5px;
+}
+
+.withdraw {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background: #fff2a8;
 }
