@@ -16,22 +16,26 @@
   </div>
 
   <script type="module">
+    // Import Firebase SDKs
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
-    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js";
+    import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js";
 
+    // ✅ Your Firebase configuration
     const firebaseConfig = {
-      apiKey: "AIzaSyBbH8TEhwYOcnr7nQyCsNYjY_f2GFWwZtQ",
-      authDomain: "diva-web7.firebaseapp.com",
-      projectId: "diva-web7",
-      storageBucket: "diva-web7.firebasestorage.app",
-      messagingSenderId: "125041351657",
-      appId: "1:125041351657:web:812f04c11dfee2734dc978",
-      measurementId: "G-XZR86PRGMP"
+      apiKey: "AIzaSyCHBwbf8yj_iIGiRAlfa9ZC7fe7ji7zmDE",
+      authDomain: "diva-ads.firebaseapp.com",
+      projectId: "diva-ads",
+      storageBucket: "diva-ads.firebasestorage.app",
+      messagingSenderId: "80165354631",
+      appId: "1:80165354631:web:233be7844f7d8431c7cc22",
+      measurementId: "G-Q9RSHE0ZPP"
     };
 
+    // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
+    // 🔐 Handle login
     document.getElementById("loginBtn").addEventListener("click", async () => {
       const email = document.getElementById("logEmail").value.trim();
       const password = document.getElementById("logPassword").value.trim();
@@ -39,9 +43,16 @@
       try {
         await signInWithEmailAndPassword(auth, email, password);
         alert("✅ Login successful!");
-        window.location.href = "index.html";
+        window.location.href = "dashboard.html"; // ✅ redirect after login
       } catch (error) {
         alert("⚠️ " + error.message);
+      }
+    });
+
+    // 🚀 If user already logged in, auto-redirect
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        window.location.href = "dashboard.html";
       }
     });
   </script>
