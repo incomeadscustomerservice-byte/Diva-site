@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diva Ads - Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>👑 Diva Ads Admin Panel</h1>
+    <nav>
+      <a href="dashboard.html">Dashboard</a> |
+      <a href="index.html">Home</a> |
+      <a href="#" id="logoutBtn">Logout</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Users</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Balance (₦)</th>
+          </tr>
+        </thead>
+        <tbody id="userTable">
+          <tr><td>John Doe</td><td>john@example.com</td><td>250</td></tr>
+          <tr><td>Mary Ada</td><td>mary@example.com</td><td>400</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Manage Ads</h2>
+      <button>Add New Ad</button>
+      <ul id="adsList">
+        <li>Ad #1 — ₦10 per click</li>
+        <li>Ad #2 — ₦15 per click</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Payments</h2>
+      <p>Pending withdrawals: 2</p>
+      <button>Process Payments</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Diva Ads — Admin Panel</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
