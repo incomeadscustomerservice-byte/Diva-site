@@ -1,26 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diva Ads - Login</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DIVA ADS - Login</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h2>Welcome back to Diva Ads 💛</h2>
-    <form id="loginForm">
-      <label for="email">Email</label>
-      <input type="email" id="email" placeholder="Enter your email" required>
-
-      <label for="password">Password</label>
-      <input type="password" id="password" placeholder="Enter your password" required>
-
-      <button type="submit">Login</button>
-    </form>
+  <div class="auth-container">
+    <h2>Login</h2>
+    <input type="email" id="logEmail" placeholder="Email" required />
+    <input type="password" id="logPassword" placeholder="Password" required />
+    <button id="loginBtn">Login</button>
     <p>Don’t have an account? <a href="register.html">Register here</a></p>
   </div>
 
-  <script src="app.js"></script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBbH8TEhwYOcnr7nQyCsNYjY_f2GFWwZtQ",
+      authDomain: "diva-web7.firebaseapp.com",
+      projectId: "diva-web7",
+      storageBucket: "diva-web7.firebasestorage.app",
+      messagingSenderId: "125041351657",
+      appId: "1:125041351657:web:812f04c11dfee2734dc978",
+      measurementId: "G-XZR86PRGMP"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    document.getElementById("loginBtn").addEventListener("click", async () => {
+      const email = document.getElementById("logEmail").value.trim();
+      const password = document.getElementById("logPassword").value.trim();
+
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+        alert("✅ Login successful!");
+        window.location.href = "index.html";
+      } catch (error) {
+        alert("⚠️ " + error.message);
+      }
+    });
+  </script>
 </body>
 </html>
