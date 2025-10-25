@@ -1,67 +1,110 @@
-  /* Dashboard layout upgrades */
-.topbar {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+}
+
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #FFD700;
-  padding: 15px 25px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background-color: #111;
+  padding: 15px 30px;
+  border-bottom: 3px solid #FFD700;
 }
 
-.topbar .logo {
-  font-weight: bold;
-  font-size: 1.2rem;
+.logo {
+  color: #FFD700;
+  font-size: 1.8rem;
+  font-weight: 700;
 }
 
-.dashboard {
-  max-width: 1000px;
-  margin: 30px auto;
-  padding: 10px;
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  margin: 20px 0;
+nav a:hover {
+  color: #FFD700;
 }
 
-.stat-card {
-  background: #fffbea;
-  border-radius: 10px;
-  padding: 20px;
+.hero {
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  padding: 60px 20px;
 }
 
-.stat-card h3 {
-  margin: 0;
-  color: #555;
+.hero .flyer {
+  max-width: 300px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  border: 2px solid #FFD700;
 }
 
-.stat-amount {
-  font-size: 1.5rem;
-  font-weight: bold;
+.hero h2 {
+  color: #FFD700;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  color: #eee;
+}
+
+.buttons .btn,
+.buttons .btn-disabled {
+  display: inline-block;
+  margin: 8px;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn {
+  background-color: #FFD700;
   color: #000;
-  margin-top: 5px;
 }
 
-.withdraw {
+.btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.btn-disabled {
+  background-color: #444;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.about, .contact {
   text-align: center;
+  padding: 50px 20px;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
+.about h3, .contact h3 {
+  color: #FFD700;
+  margin-bottom: 15px;
 }
 
-th, td {
-  padding: 10px;
+footer {
   text-align: center;
-  border-bottom: 1px solid #eee;
+  padding: 20px;
+  background-color: #111;
+  border-top: 2px solid #FFD700;
+  color: #ccc;
+  font-size: 0.9rem;
 }
 
-th {
-  background: #fff2a8;
-}
