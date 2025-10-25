@@ -1,104 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Balance Card</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background: #e0e5ec;
-    }
-
-    .card {
-      width: 330px;
-      height: 200px;
-      background: #e0e5ec;
-      border-radius: 20px;
-      box-shadow: 
-        7px 7px 15px #babecc,
-        -7px -7px 15px #ffffff;
-      padding: 25px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      width: 50px;
-      height: 35px;
-      background: linear-gradient(135deg, #00b4d8, #0077b6);
-      border-radius: 8px;
-    }
-
-    .card h3 {
-      font-size: 16px;
-      color: #6b7280;
-      font-weight: 500;
-    }
-
-    .balance {
-      font-size: 26px;
-      color: #111827;
-      font-weight: 600;
-      margin-top: 8px;
-    }
-
-    .card-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 14px;
-      color: #6b7280;
-    }
-
-    .card-footer span {
-      font-weight: 600;
-      color: #111827;
-    }
-
-    /* Optional hover glow */
-    .card:hover {
-      box-shadow:
-        5px 5px 12px #babecc,
-        -5px -5px 12px #ffffff,
-        inset 0 0 15px rgba(0, 123, 255, 0.15);
-      transform: translateY(-2px);
-      transition: 0.3s;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DIVA ADS — Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="card">
-    <div class="top">
-      <h3>Available Balance</h3>
-      <div class="balance">$12,540.00</div>
-    </div>
-    <div class="card-footer">
+  <header class="topbar">
+    <div class="brand">
+      <img src="assets/diva-logo.jpg" alt="Diva Ads" class="logo-img">
       <div>
-        <small>Card Holder</small><br>
-        <span>Kingsley Micheal</span>
-      </div>
-      <div>
-        <small>Card No</small><br>
-        <span>**** **** **** 9823</span>
+        <div class="site-title">DIVA ADS</div>
+        <div class="small">Welcome back, <span id="displayName">User</span></div>
       </div>
     </div>
-  </div>
+    <div class="top-actions">
+      <button id="refreshBtn" title="Refresh">⟳</button>
+      <button id="logoutBtn" class="btn-ghost">Logout</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="balances">
+      <div class="card balance-card">
+        <div class="card-head">
+          <small>Affiliate Balance</small>
+          <span class="currency">₦</span>
+        </div>
+        <div class="amount" id="affiliateBalance">0</div>
+        <div class="card-foot">Total earned from referrals & ads</div>
+      </div>
+
+      <div class="card balance-card">
+        <div class="card-head">
+          <small>Activity Balance</small>
+          <span class="currency">₦</span>
+        </div>
+        <div class="amount" id="activityBalance">0</div>
+        <div class="card-foot">Earned from tasks & spins</div>
+      </div>
+    </section>
+
+    <section class="actions card">
+      <h3>Quick Actions</h3>
+
+      <div class="action-grid">
+        <div class="action">
+          <h4>Complete Task</h4>
+          <p>Finish a short task and earn <strong>₦50</strong>.</p>
+          <button id="taskBtn" class="btn">Complete Task (₦50)</button>
+        </div>
+
+        <div class="action">
+          <h4>Watch Ad</h4>
+          <p>Watch an ad to earn <strong>₦10</strong>.</p>
+          <button id="watchAdBtn" class="btn">Watch Ad (₦10)</button>
+        </div>
+
+        <div class="action">
+          <h4>Place Advert</h4>
+          <p>Advertise with us — contact on Telegram.</p>
+          <a href="https://t.me/Divaadsweb" target="_blank" class="btn-outline">Place Ads</a>
+        </div>
+
+        <div class="action">
+          <h4>Join Telegram</h4>
+          <p>Get updates, offers & support.</p>
+          <a href="https://t.me/+bo1lmw5Jqk0yZmY0" target="_blank" class="btn">Join Telegram</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="withdraw card">
+      <h3>Withdraw</h3>
+      <p>Request payout for your available balance.</p>
+      <div class="withdraw-row">
+        <input id="withdrawAmount" type="number" placeholder="Amount (₦)" min="100" />
+        <button id="withdrawBtn" class="btn">Request Withdrawal</button>
+      </div>
+      <div class="hint">Minimum withdrawal: ₦2000</div>
+    </section>
+
+    <section class="card stats">
+      <h3>Your Stats</h3>
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="stat-num" id="statClicks">0</div>
+          <div class="stat-label">Clicks</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" id="statViews">0</div>
+          <div class="stat-label">Views</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" id="statReferrals">0</div>
+          <div class="stat-label">Referrals</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Diva Ads — Real Earning Platform</p>
+  </footer>
+
+  <script type="module" src="dashboard.js"></script>
 </body>
-  </html>
+</html>
