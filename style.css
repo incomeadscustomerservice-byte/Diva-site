@@ -6,9 +6,11 @@
 }
 
 body {
-  background-color: #000;
+  background: linear-gradient(135deg, #000000, #1a1a1a);
   color: #fff;
-  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
@@ -48,6 +50,7 @@ nav a:hover {
   border-radius: 15px;
   margin-bottom: 20px;
   border: 2px solid #FFD700;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
 }
 
 .hero h2 {
@@ -62,8 +65,7 @@ nav a:hover {
   color: #eee;
 }
 
-.buttons .btn,
-.buttons .btn-disabled {
+.buttons .btn {
   display: inline-block;
   margin: 8px;
   padding: 12px 25px;
@@ -71,22 +73,13 @@ nav a:hover {
   text-decoration: none;
   font-weight: 600;
   transition: 0.3s;
-}
-
-.btn {
   background-color: #FFD700;
   color: #000;
 }
 
-.btn:hover {
+.buttons .btn:hover {
   background-color: #fff;
   color: #000;
-}
-
-.btn-disabled {
-  background-color: #444;
-  color: #999;
-  cursor: not-allowed;
 }
 
 .about, .contact {
@@ -108,3 +101,76 @@ footer {
   font-size: 0.9rem;
 }
 
+/* ==== Auth Pages ==== */
+.auth-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.1);
+  text-align: center;
+  transition: 0.4s;
+}
+
+.auth-container:hover {
+  box-shadow: 0 0 35px rgba(255, 215, 0, 0.3);
+}
+
+.auth-container h2 {
+  color: #FFD700;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background-color: #222;
+  color: #FFD700;
+  font-size: 1rem;
+}
+
+.auth-container input::placeholder {
+  color: #999;
+}
+
+.auth-container button {
+  width: 100%;
+  background-color: #FFD700;
+  color: #000;
+  padding: 12px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-container button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.auth-container p {
+  margin-top: 20px;
+  color: #ccc;
+}
+
+.auth-container a {
+  color: #FFD700;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-container a:hover {
+  text-decoration: underline;
+}
