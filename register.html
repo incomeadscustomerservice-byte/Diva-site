@@ -1,29 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diva Ads - Register</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DIVA ADS - Register</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h2>Create your Diva Ads account 💰</h2>
-    <form id="registerForm">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" placeholder="Enter your full name" required>
+  <div class="auth-container">
+    <h2>Create Account</h2>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" placeholder="Enter your email" required>
+    <input type="text" id="username" placeholder="Username" required />
+    <input type="tel" id="phone" placeholder="Phone Number" required />
+    <input type="email" id="regEmail" placeholder="Email Address" required />
+    <input type="password" id="regPassword" placeholder="Password" required />
+    <button id="registerBtn">Register</button>
 
-      <label for="password">Password</label>
-      <input type="password" id="password" placeholder="Enter your password" required>
-
-      <button type="submit">Register</button>
-    </form>
-    <p>Already have an account? <a href="login.html">Login here</a></p>
+    <p>Already have an account? <a href="login.html">Login</a></p>
   </div>
 
-  <script src="app.js"></script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js";
+    import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBbH8TEhwYOcnr7nQyCsNYjY_f2GFWwZtQ",
+      authDomain: "diva-web7.firebaseapp.com",
+      projectId: "diva-web7",
+      storageBucket: "diva-web7.firebasestorage.app",
+      messagingSenderId: "125041351657",
+      appId: "1:125041351657:web:812f04c11dfee2734dc978",
+      measurementId: "G-XZR86PRGMP"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    document.getElementById("registerBtn").addEventListener("click", async () => {
+      const username = document.getElementById("username").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("regEmail").value.trim();
+      const password = document.getElementById("regPassword").value.trim();
+
+      if (!username || !phone || !email || !password) {
+        alert("⚠️ Please fill all fields!");
+        return;
+      }
+
+      try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+
+        // Save extra details in Firestore
+        await setDoc(doc(db, "users", user.uid), {
+          username: username,
+          phone: phone,
+          email: email,
+          createdAt: new Date().toISOString()
+        });
+
+        alert("✅ Registration successful!");
+        window.location.href = "login.html";
+      } catch (error) {
+        alert("⚠️ " + error.message);
+      }
+    });
+  </script>
 </body>
 </html>
