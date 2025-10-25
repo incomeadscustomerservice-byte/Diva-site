@@ -7,28 +7,75 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Diva Ads Dashboard 💸</h1>
+  <header class="topbar">
+    <div class="logo">💛 DIVA ADS</div>
     <nav>
-      <a href="index.html">Home</a> |
+      <a href="index.html">Home</a>
       <a href="#" id="logoutBtn">Logout</a>
     </nav>
   </header>
 
-  <main class="container">
-    <section class="card">
-      <h2>Your Earnings</h2>
-      <p><strong>Balance:</strong> ₦<span id="balance">0</span></p>
-      <button id="withdrawBtn">Request Withdrawal</button>
+  <main class="dashboard">
+    <!-- User Info -->
+    <section class="user-info card">
+      <h2>Welcome, <span id="userName">Affiliate User</span></h2>
+      <p>Start earning by promoting ads and getting clicks!</p>
     </section>
 
+    <!-- Stats Overview -->
+    <section class="stats-grid">
+      <div class="stat-card">
+        <h3>💰 Balance</h3>
+        <p class="stat-amount">₦<span id="balance">2,500</span></p>
+      </div>
+      <div class="stat-card">
+        <h3>👁️ Total Views</h3>
+        <p class="stat-amount"><span id="views">540</span></p>
+      </div>
+      <div class="stat-card">
+        <h3>🖱️ Clicks</h3>
+        <p class="stat-amount"><span id="clicks">312</span></p>
+      </div>
+      <div class="stat-card">
+        <h3>📈 CTR</h3>
+        <p class="stat-amount"><span id="ctr">58%</span></p>
+      </div>
+    </section>
+
+    <!-- Ads Table -->
     <section class="card">
-      <h2>Available Ads</h2>
-      <ul id="adsList">
-        <li>Ad #1 — Click to earn ₦10</li>
-        <li>Ad #2 — Click to earn ₦15</li>
-        <li>Ad #3 — Click to earn ₦20</li>
-      </ul>
+      <h2>Your Active Ads</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Ad Name</th>
+            <th>Views</th>
+            <th>Clicks</th>
+            <th>Earned (₦)</th>
+          </tr>
+        </thead>
+        <tbody id="adsTable">
+          <tr>
+            <td>Banner #1</td>
+            <td>240</td>
+            <td>80</td>
+            <td>₦800</td>
+          </tr>
+          <tr>
+            <td>Sidebar Ad #2</td>
+            <td>300</td>
+            <td>120</td>
+            <td>₦1,200</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Withdraw Section -->
+    <section class="card withdraw">
+      <h2>Withdraw Earnings</h2>
+      <p>Minimum payout: ₦2,000</p>
+      <button id="withdrawBtn">Request Withdrawal</button>
     </section>
   </main>
 
