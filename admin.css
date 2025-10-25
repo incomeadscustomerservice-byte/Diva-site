@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #fff8e1;
+  color: #222;
+  min-height: 100vh;
+}
+
+header {
+  background: #ffeb3b;
+  color: #222;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 1.4rem;
+}
+
+header .admin-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header button {
+  background: #222;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+header button:hover {
+  background: #444;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  font-size: 1rem;
+  color: #666;
+}
+
+.card p {
+  font-size: 1.4rem;
+  color: #111;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.users-table {
+  padding: 20px;
+}
+
+.users-table h2 {
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+th {
+  background: #ffeb3b;
+  color: #222;
+}
+
+tr:hover {
+  background: #fff9c4;
+}
