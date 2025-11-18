@@ -3,74 +3,290 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DIVA ADS - Real Earning Platform</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>DIVA ADS - Earn Smarter</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Poppins, sans-serif;
+      background: #fdfdfd;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background: #fff;
+      border-bottom: 2px solid #f0f0f0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: #222;
+      letter-spacing: 1px;
+    }
+
+    /* Three-dot menu button */
+    .menu-btn {
+      background: none;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      padding: 5px;
+      color: #222;
+    }
+
+    /* Dropdown */
+    .menu-container {
+      position: relative;
+    }
+
+    .menu-dropdown {
+      position: absolute;
+      top: 45px;
+      right: 0;
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      width: 150px;
+      display: none;
+      flex-direction: column;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
+      animation: fadeIn 0.2s ease-in-out;
+    }
+
+    .menu-dropdown a {
+      padding: 12px 15px;
+      text-decoration: none;
+      color: #333;
+      font-size: 15px;
+      display: block;
+    }
+
+    .menu-dropdown a:hover {
+      background: #f7f7f7;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Hero */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 20px;
+      flex-wrap: wrap;
+    }
+
+    .hero-content {
+      max-width: 500px;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    .hero-buttons .btn {
+      padding: 12px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-right: 10px;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .primary { background: #ffcc00; color: #000; }
+    .secondary { border: 2px solid #333; color: #333; }
+
+    .hero-image {
+      max-width: 330px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    /* About */
+    .about {
+      padding: 50px 20px;
+      text-align: center;
+      background: #fff8d1;
+    }
+
+    .about h3 {
+      font-size: 26px;
+    }
+
+    .about-text {
+      margin-top: 15px;
+      max-width: 750px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    /* Features */
+    .features {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .feature-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .feature-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 3px 12px rgba(0,0,0,0.1);
+      width: 260px;
+    }
+
+    /* Join section */
+    .join {
+      padding: 50px 20px;
+      text-align: center;
+      background: #ffe585;
+    }
+
+    .btn.telegram {
+      padding: 12px 25px;
+      background: #0088cc;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      padding: 20px;
+      text-align: center;
+      background: #222;
+      color: #fff;
+      margin-top: 40px;
+    }
+  </style>
 </head>
+
 <body>
+
+  <!-- Header with Three-Dot Menu -->
   <header class="navbar">
     <h1 class="logo">DIVA ADS</h1>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="register.html">Register</a>
-      <a href="login.html">Login</a>
-      <a href="https://t.me/+bo1lmw5Jqk0yZmY0" target="_blank">Telegram</a>
-    </nav>
+
+    <div class="menu-container">
+      <button class="menu-btn">⋮</button>
+
+      <div class="menu-dropdown">
+        <a href="register.html">Sign In</a>
+        <a href="login.html">Login</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
       <h2>Turn Your Clicks into Cash 💸</h2>
       <p>
-        Welcome to <strong>DIVA ADS</strong> — the smart way to earn online by promoting digital ads and connecting with real opportunities.  
-        Start today and grow your digital income with ease.
+        Welcome to <strong>DIVA ADS</strong> — a modern earning platform where you can make real money by completing simple tasks, promoting ads, and inviting friends.
       </p>
       <div class="hero-buttons">
         <a href="register.html" class="btn primary">Get Started</a>
         <a href="login.html" class="btn secondary">Login</a>
       </div>
     </div>
-    <img src="assets/flyer.jpg" alt="Diva Ads Flyer" class="hero-image" />
+
+    <img src="assets/flyer.jpg" class="hero-image" alt="Diva Ads Flyer">
   </section>
 
-  <!-- 🌟 New Description Section -->
+  <!-- About -->
   <section class="about">
     <h3>🌟 About Diva Ads 🌟</h3>
     <p class="about-text">
-      <strong>Diva Ads</strong> is a fun and energetic mobile earning platform where you can make money 💰 by spinning 🎡, joining groups or channels 📲, and referring friends 👥.  
-      With simple tasks and a rewarding referral system, you can grow your earnings quickly and conveniently—all from your phone 📱.  
-      Just like its vibrant yellow 💛 logo, Diva Ads brings positivity, excitement, and opportunity right to your fingertips. 💛  
-      <br /><br />
-      Join <strong>Diva Ads</strong> today and start earning! 🚀
+      <strong>Diva Ads</strong> is a fun and easy-to-use mobile earning platform where you can make money 💰  
+      by spinning 🎡, joining channels 📲, completing tasks, and referring friends 👥.
+      <br><br>
+      Powered by a bright yellow 💛 brand, we bring positivity, excitement, and real earning opportunities right to your phone.
     </p>
   </section>
 
+  <!-- Features -->
   <section class="features">
     <h3>Why Choose DIVA ADS?</h3>
+
     <div class="feature-grid">
       <div class="feature-card">
         <h4>💰 Real Income</h4>
-        <p>Earn money directly from your phone through verified affiliate and ad promotions.</p>
+        <p>Earn real money through tasks, ads, and referrals.</p>
       </div>
+
       <div class="feature-card">
-        <h4>⚡ Fast Payouts</h4>
-        <p>Withdraw your earnings quickly — no delays, no excuses.</p>
+        <h4>⚡ Fast Withdrawals</h4>
+        <p>Quick payouts — no delays, no excuses.</p>
       </div>
+
       <div class="feature-card">
         <h4>🌍 Community Support</h4>
-        <p>Join thousands of active users on our Telegram group for updates and motivation.</p>
+        <p>Join thousands of active earners on Telegram.</p>
       </div>
     </div>
   </section>
 
+  <!-- Join Telegram -->
   <section class="join">
     <h3>Join Our Telegram Community 🚀</h3>
-    <p>Stay updated, connect with other earners, and never miss a payout alert.</p>
-    <a href="https://t.me/+bo1lmw5Jqk0yZmY0" class="btn telegram">Join Telegram</a>
+    <p>Stay updated, get support, and never miss payout news.</p>
+    <a href="https://t.me/+bo1lmw5Jqk0yZmY0" class="btn telegram" target="_blank">
+      Join Telegram
+    </a>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>© 2025 DIVA ADS. All Rights Reserved.</p>
   </footer>
+
+  <!-- JS Menu Toggle -->
+  <script>
+    const menuBtn = document.querySelector('.menu-btn');
+    const dropdown = document.querySelector('.menu-dropdown');
+
+    menuBtn.addEventListener('click', () => {
+      dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    // Close when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".menu-container")) {
+        dropdown.style.display = "none";
+      }
+    });
+  </script>
+
 </body>
 </html>
+
