@@ -1,0 +1,166 @@
+/* ===== GLOBAL COLORS ===== */
+:root {
+  --primary: #ff0000;     /* Bright Red */
+  --secondary: #ffcc00;   /* Yellow */
+  --text-dark: #222;
+  --white: #fff;
+}
+
+/* ===== BODY ===== */
+body {
+  background: #fffbea;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background: var(--primary);
+  color: var(--white);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+nav a {
+  color: var(--white);
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: var(--secondary);
+}
+
+/* ===== 3 DOT MENU ===== */
+.menu-icon {
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+  color: var(--white);
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 5px solid var(--primary);
+}
+
+.hero-content {
+  max-width: 450px;
+  color: var(--white);
+}
+
+.hero-image {
+  width: 250px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.btn.primary:hover {
+  background: #d60000;
+}
+
+.btn.secondary {
+  background: var(--secondary);
+  color: var(--text-dark);
+}
+
+.btn.secondary:hover {
+  background: #ffd700;
+}
+
+/* ===== ABOUT SECTION ===== */
+.about {
+  padding: 40px 20px;
+  background: var(--secondary);
+  color: var(--text-dark);
+  text-align: center;
+  font-size: 17px;
+  border-bottom: 5px solid var(--primary);
+}
+
+/* ===== FEATURES ===== */
+.features {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.feature-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  background: var(--white);
+  width: 260px;
+  padding: 20px;
+  border-radius: 12px;
+  border-top: 5px solid var(--primary);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 10px;
+  margin-top: 30px;
+}
+
+/* ===== MOBILE MENU ===== */
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: 65px;
+    right: 10px;
+    background: var(--primary);
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    border-radius: 10px;
+  }
+
+  nav a {
+    margin: 10px 0;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
